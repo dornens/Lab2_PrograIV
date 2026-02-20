@@ -26,16 +26,16 @@ repositorio/
 
 ## Tabla de Selectores
 
-| Tipo de selector | Elemento afectado | Descripción de la tarea que realiza el elemento |
+| Tipo de selector | Código del selector | Descripción de la tarea que realiza el elemento |
 |---|---|---|
-| `getElementById` | `#nombreInput` / `#resultado` | Lee el valor escrito en el input de texto y muestra un saludo personalizado en el párrafo con id `resultado`. |
-| `querySelector` | `#colorSelect` → `.programa` | Detecta el cambio en el elemento `<select>` y aplica el color elegido como fondo del panel izquierdo. |
-| `querySelectorAll` | `.lang-check` (checkboxes) | Recorre todos los checkboxes que tienen la clase `.lang-check` y lista únicamente los que están marcados. |
-| `getElementById` | `#tamanoTexto` → `#subtitulo` | Toma el valor del `<input type="range">` y ajusta dinámicamente el `font-size` del subtítulo de la página. |
-| `getElementsByTagName` | `<textarea>` | Accede al elemento `<textarea>` por nombre de etiqueta y cuenta la cantidad de palabras que contiene. |
-| `getElementById` | `#imagenPanel` | Al presionar el botón, alterna el atributo `src` de la imagen entre cuatro opciones distintas. |
-| `querySelector` (etiqueta) | `h1` | Toma el color seleccionado en el `<input type="color">` y lo aplica al título principal `<h1>`. |
-| `getElementById` | `#subtitulo` / `#btnToggle` | Alterna la visibilidad del subtítulo usando `display`, y actualiza el texto del botón según el estado actual. |
+| `getElementById` | `document.getElementById("nombreInput")` | Lee el valor escrito en el input de texto y muestra un saludo personalizado en el párrafo con id `resultado`. |
+| `querySelector` | `document.querySelector(".programa")` | Detecta el cambio en el elemento `<select>` y aplica el color elegido como fondo del panel izquierdo. |
+| `querySelectorAll` | `document.querySelectorAll(".lang-check:checked")` | Recorre todos los checkboxes que tienen la clase `.lang-check` y lista únicamente los que están marcados. |
+| `getElementById` | `document.getElementById("subtitulo")` | Toma el valor del `<input type="range">` y ajusta dinámicamente el `font-size` del subtítulo de la página. |
+| `getElementsByTagName` | `document.getElementsByTagName("textarea")[0]` | Accede al elemento `<textarea>` por nombre de etiqueta y cuenta la cantidad de palabras que contiene. |
+| `getElementById` | `document.getElementById("imagenPanel")` | Al presionar el botón, alterna el atributo `src` de la imagen entre cuatro opciones distintas. |
+| `querySelector` (etiqueta) | `document.querySelector("h1")` | Toma el color seleccionado en el `<input type="color">` y lo aplica al título principal `<h1>`. |
+| `getElementById` | `document.getElementById("btnToggle")` | Alterna la visibilidad del subtítulo usando `display`, y actualiza el texto del botón según el estado actual. |
 
 ---# Lab2_PrograIV
 

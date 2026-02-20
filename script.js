@@ -31,7 +31,7 @@ function mostrarLenguajes() {
   }
 
   const nombres = Array.from(checks).map((c) => c.value);
-  p.textContent = "Tus favoritos: " + nombres.join(", ") + " 🎉";
+  p.textContent = "Tus favoritos: " + nombres.join(", ");
 }
 
 /* ── 4. getElementById → cambiar tamaño del subtítulo (range) ── */
