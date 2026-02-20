@@ -14,7 +14,7 @@ Página web interactiva desarrollada con **HTML, CSS y JavaScript** que demuestr
 ## Estructura de archivos
 
 ```
-📁 repositorio/
+repositorio/
  ├── lab2.html     → Estructura principal de la página
  ├── styles.css     → Estilos visuales de la página
  ├── script.js      → Lógica e interactividad en JavaScript
@@ -24,7 +24,7 @@ Página web interactiva desarrollada con **HTML, CSS y JavaScript** que demuestr
 
 ---
 
-## 🧩 Tabla de Selectores
+## Tabla de Selectores
 
 | Tipo de selector | Elemento afectado | Descripción de la tarea que realiza el elemento |
 |---|---|---|
@@ -60,10 +60,3 @@ Página web interactiva desarrollada con **HTML, CSS y JavaScript** que demuestr
 **Ejemplo práctico de este laboratorio:** para leer los checkboxes marcados con la clase `.lang-check`, se usó `querySelectorAll(".lang-check:checked")` porque había más de uno y se necesitaba recorrerlos todos. Usar `querySelector` en ese caso solo habría devuelto el primero encontrado, ignorando el resto.
 
 ---
-
-## 👤 Autor
-
-- **Nombre:** _(Tu nombre aquí)_
-- **Carrera:** _(Tu carrera aquí)_
-- **Materia:** Programación Computacional IV
-- **Fecha:** 2025
