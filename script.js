@@ -9,7 +9,7 @@ function saludar() {
   const resultado = document.getElementById("resultado");
 
   resultado.textContent = nombre
-    ? `¡Hola, ${nombre}! Bienvenido/a al Laboratorio 2. 👋`
+    ? `¡Hola, ${nombre}! Bienvenido/a`
     : "Por favor escribe tu nombre primero.";
 }
 
