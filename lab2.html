@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laboratorio 2 – Selectores JavaScript</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <h1>Laboratorio 2 – Selectores JavaScript</h1>
+  <p id="subtitulo">Interactúa con los elementos y observa cómo JavaScript los manipula.</p>
+
+  <div class="contenedor">
+
+    <!-- PANEL IZQUIERDO: Programa / ejercicios -->
+    <div class="programa">
+
+      <!-- 1. INPUT + BUTTON → getElementById -->
+      <label for="nombreInput">1. Escribe tu nombre:</label>
+      <input type="text" id="nombreInput" placeholder="Tu nombre aquí" />
+      <button onclick="saludar()">Saludar</button>
+      <p id="resultado"></p>
+
+      <!-- 2. SELECT → querySelector -->
+      <label for="colorSelect">2. Elige el color de fondo de la tarjeta:</label>
+      <select id="colorSelect" onchange="cambiarColor()">
+        <option value="white">Blanco</option>
+        <option value="#ffe0f0">Rosa pastel</option>
+        <option value="#d0f0ff">Azul cielo</option>
+        <option value="#d4f7d4">Verde menta</option>
+        <option value="#fff3cd">Amarillo suave</option>
+      </select>
+
+      <!-- 3. CHECKBOX → querySelectorAll -->
+      <label style="margin-top:15px; font-weight:bold;">3. Selecciona tus lenguajes favoritos:</label>
+      <div id="checkboxes">
+        <label><input type="checkbox" class="lang-check" value="JavaScript" /> JavaScript</label>
+        <label><input type="checkbox" class="lang-check" value="Python" /> Python</label>
+        <label><input type="checkbox" class="lang-check" value="Java" /> Java</label>
+        <label><input type="checkbox" class="lang-check" value="C++" /> C++</label>
+      </div>
+      <button onclick="mostrarLenguajes()">Ver selección</button>
+      <p id="resultadoLenguajes"></p>
+
+      <!-- 4. RANGE → getElementsByClassName -->
+      <label for="tamanoTexto">4. Tamaño del subtítulo (px):</label>
+      <input type="range" id="tamanoTexto" min="12" max="40" value="16"
+             oninput="cambiarTamano(this.value)" />
+      <span id="valorRange">16px</span>
+
+      <!-- 5. TEXTAREA → getElementsByTagName -->
+      <label for="miTexto">5. Escribe algo y cuenta las palabras:</label>
+      <textarea id="miTexto" rows="3" placeholder="Escribe aquí..." style="width:90%;padding:5px;margin-top:10px;"></textarea>
+      <button onclick="contarPalabras()">Contar palabras</button>
+      <p id="resultadoConteo"></p>
+
+      <!-- 6. BUTTON cambiar imagen → getElementById -->
+      <label>6. Cambia la imagen del panel:</label>
+      <button onclick="cambiarImagen()">Cambiar imagen 🔄</button>
+
+      <!-- 7. INPUT color → querySelector con clase -->
+      <label for="colorTitulo">7. Cambia el color del título principal:</label>
+      <input type="color" id="colorTitulo" value="#000000" oninput="cambiarColorTitulo(this.value)" />
+
+      <!-- 8. BUTTON ocultar/mostrar subtítulo → getElementById -->
+      <label>8. Mostrar / ocultar el subtítulo:</label>
+      <button id="btnToggle" onclick="toggleSubtitulo()">Ocultar subtítulo</button>
+
+    </div><!-- fin .programa -->
+
+    <!-- PANEL DERECHO: imagen y tabla resumen -->
+    <div class="imagen">
+      <h2>Vista previa</h2>
+      <img id="imagenPanel" src="https://placehold.co/350x220/a8d8ea/ffffff?text=JavaScript+DOM" alt="Imagen del panel" />
+
+      <h2 style="margin-top:25px;">📋 Tabla de selectores</h2>
+      <table id="tablaSelectores">
+        <thead>
+          <tr>
+            <th>Tipo de selector</th>
+            <th>Elemento afectado</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>getElementById</td>
+            <td>#nombreInput / #resultado</td>
+            <td>Lee el nombre del input y muestra un saludo en el párrafo resultado.</td>
+          </tr>
+          <tr>
+            <td>querySelector</td>
+            <td>#colorSelect → .programa</td>
+            <td>Cambia el color de fondo del panel izquierdo al elegir en el select.</td>
+          </tr>
+          <tr>
+            <td>querySelectorAll</td>
+            <td>.lang-check (checkboxes)</td>
+            <td>Recorre todos los checkboxes con esa clase y lista los marcados.</td>
+          </tr>
+          <tr>
+            <td>getElementById</td>
+            <td>#tamanoTexto → #subtitulo</td>
+            <td>Ajusta el font-size del subtítulo según el valor del range slider.</td>
+          </tr>
+          <tr>
+            <td>getElementsByTagName</td>
+            <td>&lt;textarea&gt;</td>
+            <td>Accede al textarea por etiqueta y cuenta las palabras escritas.</td>
+          </tr>
+          <tr>
+            <td>getElementById</td>
+            <td>#imagenPanel</td>
+            <td>Alterna entre dos imágenes de marcador de posición al hacer clic.</td>
+          </tr>
+          <tr>
+            <td>querySelector (por tag)</td>
+            <td>h1</td>
+            <td>Cambia el color del título principal con el selector de color.</td>
+          </tr>
+          <tr>
+            <td>getElementById</td>
+            <td>#subtitulo / #btnToggle</td>
+            <td>Muestra u oculta el subtítulo y actualiza el texto del botón toggle.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Sección de preguntas de análisis -->
+      <div class="analisis">
+        <h2>📝 Análisis</h2>
+        <p><strong>¿Cuál es la ventaja de usar getElementById frente a querySelector?</strong></p>
+        <p>
+          <code>getElementById</code> es ligeramente más rápido porque el navegador lo optimiza
+          directamente a través del índice de IDs del DOM. Además, su sintaxis es más sencilla y
+          explícita cuando solo se necesita buscar por ID único. <code>querySelector</code> es más
+          flexible porque acepta cualquier selector CSS, pero tiene un pequeño costo extra de
+          parseo.
+        </p>
+        <p><strong>¿Cuándo usar querySelectorAll en lugar de querySelector?</strong></p>
+        <p>
+          Se prefiere <code>querySelectorAll</code> cuando se necesita seleccionar <em>múltiples</em>
+          elementos que coincidan con un selector. Devuelve una <strong>NodeList</strong> (estática)
+          con todos los elementos encontrados, permitiendo iterar sobre ellos. En cambio,
+          <code>querySelector</code> devuelve únicamente el <strong>primer elemento</strong>
+          coincidente (tipo <code>Element</code> o <code>null</code>). Por ejemplo, para aplicar un
+          estilo a todos los checkboxes con clase <code>.lang-check</code> es necesario usar
+          <code>querySelectorAll</code>.
+        </p>
+      </div>
+
+    </div><!-- fin .imagen -->
+  </div><!-- fin .contenedor -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
