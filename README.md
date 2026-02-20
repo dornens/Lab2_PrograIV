@@ -15,7 +15,7 @@ Página web interactiva desarrollada con **HTML, CSS y JavaScript** que demuestr
 
 ```
 repositorio/
- ├── lab2.html     → Estructura principal de la página
+ ├── index.html     → Estructura principal de la página
  ├── styles.css     → Estilos visuales de la página
  ├── script.js      → Lógica e interactividad en JavaScript
  ├── fondo.jpg      → Imagen de fondo de la página
